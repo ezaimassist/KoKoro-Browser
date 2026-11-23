@@ -1,0 +1,6 @@
+{
+  "name": "Bare Turbo",
+  "description": "De-Googled high-performance Android gaming browser inspired by Bare Browser, featuring Gaming Mode, live FPS & GPU telemetry, WebGL optimization, and tracker shielding.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

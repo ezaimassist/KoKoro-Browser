@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Bare Turbo</string>
+    <string name="tagline">De-Googled High-FPS Android Browser</string>
+    <string name="address_placeholder">Search DuckDuckGo or enter URL…</string>
+    <string name="gaming_mode">Gaming Mode</string>
+    <string name="gaming_mode_active">Gaming Mode Active</string>
+    <string name="gpu_lab">GPU Lab</string>
+    <string name="shield_control">Shield &amp; Profiles</string>
+    <string name="tabs_drawer">Open Tabs</string>
+    <string name="new_tab">New Tab</string>
+    <string name="benchmark_title">WebGL2 &amp; Latency Lab</string>
+    <string name="cd_back">Navigate back</string>
+    <string name="cd_forward">Navigate forward</string>
+    <string name="cd_reload">Reload page</string>
+    <string name="cd_stop">Stop loading</string>
+    <string name="cd_home">Home speed dial</string>
+    <string name="cd_gaming_toggle">Toggle Gaming Mode</string>
+    <string name="cd_tabs">Open tabs drawer</string>
+    <string name="cd_gpu_lab">Open GPU and rendering lab</string>
+    <string name="cd_shield">Open shield and bookmarks</string>
+    <string name="cd_bookmark">Toggle bookmark</string>
+    <string name="cd_close_tab">Close tab</string>
+    <string name="cd_hud_toggle">Toggle performance HUD</string>
+    <string name="cd_exit_gaming">Exit Gaming Mode</string>
+    <string name="cd_hero_banner">Bare Turbo GPU pipeline visual</string>
+    <string name="cd_settings">Open browser settings</string>
+</resources>
