@@ -1,6 +1,6 @@
 {
-  "name": "Bare Turbo",
-  "description": "De-Googled high-performance Android gaming browser inspired by Bare Browser, featuring Gaming Mode, live FPS & GPU telemetry, WebGL optimization, and tracker shielding.",
+  "name": "PulseBrowser 2.0",
+  "description": "Native Kotlin & Jetpack Compose Android gaming browser powered by Chromium WebView with LastHavens WebGL/WebAssembly compatibility, Gaming Mode, real WebViewClient/WebChromeClient diagnostics, download manager, and private browsing.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

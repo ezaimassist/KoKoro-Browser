@@ -3,6 +3,6 @@
     <item
         android:width="66dp"
         android:height="66dp"
-        android:drawable="@drawable/ic_bare_turbo_fg_1795386899964"
+        android:drawable="@drawable/ic_pulse_browser_fg_1795390420314"
         android:gravity="center" />
 </layer-list>

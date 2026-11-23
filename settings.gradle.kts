@@ -22,6 +22,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "Bare Turbo"
+rootProject.name = "PulseBrowser 2.0"
 
 include(":app")

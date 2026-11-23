@@ -14,84 +14,75 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Immutable
-data class BareTelemetryColors(
-    val fpsOptimal: Color,
-    val gpuAccent: Color,
-    val thermalWarn: Color,
-    val criticalPulse: Color,
-    val cardBorder: Color,
-    val hudBackground: Color
+data class PulseSemanticColors(
+    val okGreen: Color,
+    val warnAmber: Color,
+    val errorRose: Color,
+    val privateViolet: Color,
+    val privateContainer: Color,
+    val border: Color,
+    val hudOverlay: Color
 )
 
-val LocalTelemetryColors = staticCompositionLocalOf {
-    BareTelemetryColors(
-        fpsOptimal = VoltLime,
-        gpuAccent = CyberCyan,
-        thermalWarn = SignalAmber,
-        criticalPulse = CrimsonPulse,
-        cardBorder = CarbonBorder,
-        hudBackground = Color(0xD90A0C10)
+val LocalPulseSemanticColors = staticCompositionLocalOf {
+    PulseSemanticColors(
+        okGreen = PulseEmerald,
+        warnAmber = PulseAmber,
+        errorRose = PulseRose,
+        privateViolet = PulsePrivateViolet,
+        privateContainer = PulsePrivateContainer,
+        border = PulseBorder,
+        hudOverlay = Color(0xDF0B0F19)
     )
 }
 
-private val DarkColorScheme = darkColorScheme(
-    primary = VoltLime,
-    onPrimary = OnVoltLime,
-    primaryContainer = VoltLimeContainer,
-    onPrimaryContainer = VoltLime,
-    secondary = CyberCyan,
-    onSecondary = OnCyberCyan,
-    secondaryContainer = CyberCyanContainer,
-    onSecondaryContainer = CyberCyan,
-    tertiary = SignalAmber,
-    onTertiary = OnSignalAmber,
-    tertiaryContainer = SignalAmberContainer,
-    onTertiaryContainer = SignalAmber,
-    error = CrimsonPulse,
+private val PulseDarkColors = darkColorScheme(
+    primary = PulseCyan,
+    onPrimary = OnPulseCyan,
+    primaryContainer = PulseCyanContainer,
+    onPrimaryContainer = PulseCyan,
+    secondary = PulseCobalt,
+    onSecondary = OnPulseCobalt,
+    secondaryContainer = PulseCobaltContainer,
+    onSecondaryContainer = Color(0xFFDBE7FF),
+    tertiary = PulseEmerald,
+    onTertiary = Color(0xFF00220D),
+    error = PulseRose,
     onError = Color.White,
-    errorContainer = CrimsonContainer,
-    onErrorContainer = CrimsonPulse,
-    background = CarbonVoid,
+    background = PulseVoid,
     onBackground = TextPrimaryDark,
-    surface = CarbonSurface,
+    surface = PulseSurface,
     onSurface = TextPrimaryDark,
-    surfaceVariant = CarbonElevated,
+    surfaceVariant = PulseElevated,
     onSurfaceVariant = TextSecondaryDark,
-    surfaceContainerLowest = CarbonVoid,
-    surfaceContainerLow = CarbonSurface,
-    surfaceContainer = CarbonElevated,
-    surfaceContainerHigh = CarbonCard,
-    surfaceContainerHighest = Color(0xFF242D40),
-    outline = CarbonBorder,
-    outlineVariant = Color(0xFF1F2636)
+    surfaceContainer = PulseElevated,
+    surfaceContainerHigh = PulseCard,
+    outline = PulseBorder
 )
 
-private val LightColorScheme = lightColorScheme(
+private val PulseLightColors = lightColorScheme(
     primary = LightPrimary,
-    onPrimary = OnLightPrimary,
+    onPrimary = Color.White,
     primaryContainer = LightPrimaryContainer,
-    onPrimaryContainer = Color(0xFF163200),
+    onPrimaryContainer = Color(0xFF002026),
     secondary = LightSecondary,
     onSecondary = Color.White,
     secondaryContainer = LightSecondaryContainer,
-    onSecondaryContainer = Color(0xFF00242B),
-    tertiary = Color(0xFF9A5B00),
+    onSecondaryContainer = Color(0xFF0A2463),
+    tertiary = Color(0xFF15803D),
     onTertiary = Color.White,
-    tertiaryContainer = Color(0xFFFFE5BE),
-    onTertiaryContainer = Color(0xFF331C00),
-    error = Color(0xFFC81E3D),
+    error = Color(0xFFBE123C),
     onError = Color.White,
-    background = LightCanvas,
+    background = LightBg,
     onBackground = LightTextPrimary,
     surface = LightSurface,
     onSurface = LightTextPrimary,
     surfaceVariant = LightElevated,
     onSurfaceVariant = LightTextSecondary,
-    outline = LightBorder,
-    outlineVariant = Color(0xFFE2E8F0)
+    outline = LightBorder
 )
 
-private val BareShapes = Shapes(
+private val PulseShapes = Shapes(
     extraSmall = RoundedCornerShape(6.dp),
     small = RoundedCornerShape(10.dp),
     medium = RoundedCornerShape(14.dp),
@@ -100,36 +91,38 @@ private val BareShapes = Shapes(
 )
 
 @Composable
-fun BareTurboTheme(
+fun PulseBrowserTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
-    val telemetryColors = if (darkTheme) {
-        BareTelemetryColors(
-            fpsOptimal = VoltLime,
-            gpuAccent = CyberCyan,
-            thermalWarn = SignalAmber,
-            criticalPulse = CrimsonPulse,
-            cardBorder = CarbonBorder,
-            hudBackground = Color(0xDE0A0C10)
+    val scheme = if (darkTheme) PulseDarkColors else PulseLightColors
+    val semantic = if (darkTheme) {
+        PulseSemanticColors(
+            okGreen = PulseEmerald,
+            warnAmber = PulseAmber,
+            errorRose = PulseRose,
+            privateViolet = PulsePrivateViolet,
+            privateContainer = PulsePrivateContainer,
+            border = PulseBorder,
+            hudOverlay = Color(0xE00B0F19)
         )
     } else {
-        BareTelemetryColors(
-            fpsOptimal = LightPrimary,
-            gpuAccent = LightSecondary,
-            thermalWarn = Color(0xFFB45309),
-            criticalPulse = Color(0xFFC81E3D),
-            cardBorder = LightBorder,
-            hudBackground = Color(0xE810141C)
+        PulseSemanticColors(
+            okGreen = Color(0xFF15803D),
+            warnAmber = Color(0xFFB45309),
+            errorRose = Color(0xFFBE123C),
+            privateViolet = Color(0xFF7E22CE),
+            privateContainer = Color(0xFFF3E8FF),
+            border = LightBorder,
+            hudOverlay = Color(0xE8111726)
         )
     }
 
-    CompositionLocalProvider(LocalTelemetryColors provides telemetryColors) {
+    CompositionLocalProvider(LocalPulseSemanticColors provides semantic) {
         MaterialTheme(
-            colorScheme = colorScheme,
-            typography = Typography,
-            shapes = BareShapes,
+            colorScheme = scheme,
+            typography = PulseTypography,
+            shapes = PulseShapes,
             content = content
         )
     }
